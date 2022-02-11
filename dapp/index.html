@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Login MetaMask: <span class="login"></span></h1>
+
+<button id="loginMetaMask"> Login MetaMask</button>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.5.2/ethers.umd.min.js"
+        integrity="sha512-PtOcu3WZTldHT+VjAJdWV5ss+iGebEgc1h5olJuxUNPvKuC0VOZsk1UhNgQYi5oIyrNHhdIOw8WQMdZwBv1MyQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+    //indirizzo del contratto che verrà usato
+    const address = "0x437BCBE25c243Fa6F5E03cAC6E7e8fe4678C67E6";
+
+    //abi del contratto che verrà usato
+    const abi = [
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "requested",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "available",
+                    "type": "uint256"
+                }
+            ],
+            "name": "InsufficientBalance",
+            "type": "error"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Sent",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "balances",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "mint",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "minter",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "send",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ]
+
+    //funzione che controlla se metmask è installato nel browser e lo ritorna come un booleano
+    function MetaMaskInstallato() {
+        return Boolean(window.ethereum);
+    }
+
+    //funzione che controlla se l'account dell'utente è connesso dopo aver effettuato la connessione con metamask
+    function UtenteConnesso(accounts) {
+        return accounts && accounts.length > 0;
+    }
+
+    const loginButton = document.getElementById("loginMetaMask");
+
+    //se metamask non è installato fai apparire un alert
+    if (!MetaMaskInstallato()) alert("MetaMask non presente, devi installarlo per utilizzare la nostra dApp");
+
+
+    //utilizzo un eventlistener per controllare se il bottone è premuto, nel caso faccio la connessione
+    loginButton.addEventListener("click", () => {
+
+        if (MetaMaskInstallato()) {
+            //mi connetto a metamask
+            ethereum.request({method: "eth_requestAccounts"})
+            //ethereum.on("chainChanged", () => window.location.reload());
+
+            //quando un utente si connette stampo l'indirizzo dell'account per verificare se è giusto
+            ethereum.on("accountsChanged", (accounts) => {
+                if (UtenteConnesso(accounts)) console.log(`Usando account con indirizzo:  ${accounts[0]}.`);
+                else console.log("Nessun account collegato.");
+            });
+            const account = accounts[0];
+
+            const balance = ethereum.request({
+                method: "eth_getBalance",
+                params: [account, "latest"],
+            });
+
+            alert("Account: " + account + "\n" + "Balance: " + balance);
+
+            ethereum.on("message", (message) => alert(message));
+
+            ethereum.on("connect", (info) => {
+                alert(`Connesso alla rete:  ${info}.`);
+            });
+
+            ethereum.on("disconnect", (error) => {
+                alert(`Disconnesso dalla rete, errore:  ${error}.`);
+            });
+
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+            const signer = provider.getSigner();
+
+            const contract = new ethers.Contract(address, abi, signer);
+        }
+    });
+
+</script>
+</body>
+
+</html>
