@@ -58,6 +58,8 @@ async function loginToMetaMask(){
         });
         
     }
+    else
+        alert("Installa MetaMask per utilizzare la nostra dApp");
 };
 
 

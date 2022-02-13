@@ -4,6 +4,8 @@
     "ethereumjs-tx": "^2.1.2",
     "express": "^4.17.2",
     "fs": "^0.0.1-security",
+    "jquery": "^3.6.0",
+    "jsdom": "^19.0.0",
     "nodemon": "^2.0.15",
     "web3": "^1.7.0"
   },
