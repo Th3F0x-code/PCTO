@@ -25,9 +25,6 @@ function handleChainChanged(){window.location.reload(); }
 
 //function that handle the account changed event checking if he changed account or if he disconnected
 function handleAccountChanged() {
-
-    console.log("account changed");
-
     if(isConnected()) {
 
         let account = window.ethereum.selectedAddress;
@@ -46,11 +43,9 @@ function handleAccountChanged() {
 
  //function that delete the cookies and redirect to the notlogged.html
 function handleDisconnect(){
-
     delCookie("loggedin");
     delCookie("account");
     redirect('notlogged.html');
-
 }
 
 //function that always are listening for the events
@@ -98,7 +93,6 @@ btn_causale.addEventListener('click', async function() {
     if(reason === "-- Dona Per --" || quantityOfEthereum === "") notvalidparameters.innerText = "Non hai inserito alcuni parametri correttamente, riprova";
     
     else {
-
         notvalidparameters.innerText = "";
         //converting the quantity in ethereum in wei and adding a "0x" to let understand metamask that i'm passing a hexadecimal number
         let quantityInWei = BigNumber(quantityOfEthereum).multipliedBy(10 ** 18);
@@ -120,5 +114,4 @@ btn_causale.addEventListener('click', async function() {
             gas: "50000"
         });
     }   
-    
 });

@@ -18,7 +18,6 @@ let isMetaMask = Boolean(window.ethereum);
 if(!isMetaMask) alert("Please install MetaMask");
 
 else{
-
     checkCookies();
 
     loginBtn.addEventListener('click' , async () => {
