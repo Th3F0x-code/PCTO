@@ -7,23 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- Need to modify parameters and put them in english-->
-    <select name="sel_donatore" id="sel_donatore">
-        <option selected disabled>-- Dona Per --</option>
-        <option value="Cervello">Cancro al Cervello</option>
-        <option value="Polmoni">Cancro ai Polmoni</option>
-        <option value="Sangue">Cancro al Sangue</option>
-        <option value="Pancreas"> Cancro al Pancreas </option>
-        <option value="Ossa">Cancro alle Ossa</option>
-        <option value="Midollo">Cancro al Midollo</option>
-    </select>
+<!-- Need to modify parameters and put them in english-->
+<label for="sel_donatore"></label><select name="sel_donatore" id="sel_donatore">
+    <option selected disabled>-- Dona Per --</option>
+    <option value="Cervello">Cancro al Cervello</option>
+    <option value="Polmoni">Cancro ai Polmoni</option>
+    <option value="Sangue">Cancro al Sangue</option>
+    <option value="Pancreas"> Cancro al Pancreas</option>
+    <option value="Ossa">Cancro alle Ossa</option>
+    <option value="Midollo">Cancro al Midollo</option>
+</select>
 
-    Scegli quantita:<input id="quantita" type="text" placeholder="Quantità">
-    <button id="btn-causale" >Invia denaro</button>
-    <p id="notvalidparameters"></p>
+Scegli quantita:<input id="quantita" type="text" placeholder="Quantità">
+<button id="btn-causale">Invia denaro</button>
+<p id="notvalidparameters"></p>
 
-    <script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.0.2/bignumber.min.js'></script>
-    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
-    <script src="./javascripts/controltransactions.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.0.2/bignumber.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+<script src="./javascripts/controltransactions.js"></script>
 </body>
 </html>
