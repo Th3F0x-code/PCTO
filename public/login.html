@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KM - Login</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/newlogo.svg" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+
+    <!-- Animation CSS-->
+    <link rel="stylesheet" href="stylesheets/animation.css">
+
+</head>
+
+<body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('img/bg.svg');">
+        <!--Nav-->
+        <div class="w-full container mx-auto p-5">
+
+            <div class="w-full flex items-start justify-between">
+                <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+                    href="index.html">
+                    <img class="object-scale-down h-24 w-48 ..." src="img/newlogo.svg"> Krypto Medical
+                </a>
+
+            </div>
+
+        </div>
+
+        <!--Main-->
+        <div class="container pt-6 md:pt-0 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+
+            <!--center the h1-->
+            <!--align to start -->
+
+            <div class="w-full md:w-1/2 md:mx-auto ">
+                <h1
+                    class="my-4 text-3xl md:text-5xl text-purple-800 font-bold leading-tight text-center md:text-center slide-in-bottom-h1">
+                    Login
+                </h1>
+                <p class="text-center md:text-center text-gray-600 text-lg md:text-xl slide-in-bottom-subtitle">
+                    <span id="text-login" class="text-black-800">
+                </p>
+
+                <div class="flex justify-center mt-8 slide-in-bottom">
+                    <!--link https://metamask.io/  -->
+                    <a style="cursor: pointer;" class="text-white font-bold py-2 px-4 rounded-full">
+                        <style>
+                            #logo-container svg {
+                                width: 250px;
+                                height: auto;
+                            }
+
+                            @media only screen and (max-width: 768px) {
+                                #logo-container svg {
+                                    width: 150px;
+                                    height: auto;
+                                }
+                            }
+                        </style>
+                        <div id="logo-container">
+                            <script src="javascripts/animation-metamask.js"></script>
+                        </div>
+
+
+                </div>
+
+                <div <!--Footer-->
+                    <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+                        <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Copyright 2022 </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+
+    <script src="./javascripts/checkLogin.js"></script>
+
+</body>
+
+</html>

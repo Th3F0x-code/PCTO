@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KM - Stats</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/newlogo.svg" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+
+    <!-- Animation CSS-->
+    <link rel="stylesheet" href="stylesheets/animation.css">
+
+</head>
+
+<body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
+
+    <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('img/bg.svg');">
+        <!--Nav-->
+        <div class="w-full container mx-auto p-5">
+
+            <div class="w-full flex items-start justify-between">
+                <a class="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
+                    href="index.html">
+                    <img class="object-scale-down h-24 w-48 ..." src="img/newlogo.svg"> Krypto Medical
+                </a>
+
+            </div>
+
+            <!-- side bar-->
+            <div class="flex items-end ...">
+                <div class="py-4">
+                    <nav class="px-2">
+                        <div class="container flex flex-wrap justify-between items-center mx-auto">
+                            <div class="" id="mobile-menu">
+                                <ul
+                                    class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-5 md:text-sm md:font-medium">
+
+                                    <li id="onlylogged">
+                                        <a href="donations.html"
+                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Donations
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="stats.html"
+                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">Stats</a>
+                                    </li>
+                                    <li>
+                                        <a href="aboutus.html"
+                                            class="leading-normal text-base md:text-12xl mb-8 text-center md:text-left slide-in-bottom-subtitle">About
+                                            Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Main-->
+        <div class="container pt-6 md:pt-10 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+
+            <!--center the h1-->
+            <!--w-full o 5/6 -->
+            <div class="w-full md:w-5/6 md:mx-auto ">
+
+                <h1
+                    class="xl:text-5xl md:text-4xl text-2xl font-semibold leading-tight text-center text-gray-800 sm:mb-0 mb-12 slide-in-bottom-subtitle">
+                    Get involved and make a difference <br class="md:block hidden" />
+                    <br>
+                </h1>
+                <div class="md:mt-14 mt-4 relative sm:flex items-center justify-center slide-in-bottom">
+                    <img src="https://i.ibb.co/KjrPCyW/map.png" alt="world map image"
+                        class="w-full xl:h-full h-96 object-cover object-fill sm:block hidden" />
+                    <div
+                        class="shadow-lg xl:p-6 p-4 sm:w-auto w-full bg-white sm:absolute relative z-18 sm:mt-0 mt-4 left-0 xl:ml-56 sm:ml-12 xl:-mt-40 sm:-mt-12">
+                        <p id="top-donor" class="text-2xl font-semibold text-gray-800"></p>
+                        <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Top Donor</p>
+                    </div>
+                    <div
+                        class="shadow-lg xl:p-6 p-4 w-48 sm:w-auto w-full bg-white sm:absolute relative z-20 sm:mt-0 mt-4 xl:mt-80 sm:mt-56 xl:-ml-0 sm:-ml-12">
+                        <p id="total-donation" class="text-2xl font-semibold text-gray-800"></p>
+                        <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Total Donation</p>
+                    </div>
+                    <div
+                        class="shadow-lg xl:p-6 p-4 sm:w-auto w-full bg-white sm:absolute relative z-20 md:mt-0 sm:-mt-5 mt-4 right-0 xl:mr-56 sm:mr-24">
+                        <p id="top-donated" class="text-2xl font-semibold text-gray-800"></p>
+                        <p class="text-base leading-4 xl:mt-4 mt-2 text-gray-600">Top Donated</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="relative" style="padding-top: 56.25%">
+            <iframe class="absolute inset-0 w-full h-full" src="./donationhistory.html" frameborder="0"></iframe>
+        </div>
+
+        <div <!--Footer-->
+            <div class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
+                <a class="text-gray-500 no-underline hover:no-underline" href="#">&copy; Copyright 2022 </a>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- cache buster for checklogged.js-->
+        <script type="text/javascript">
+            var cachebuster = Math.round(new Date().getTime() / 1000);
+            document.write('<scr' + 'ipt type="text/javascript" src="./javascripts/checklogged.js?cb=' + cachebuster + '"></scr' + 'ipt>');
+        </script>
+        <!-- cache buster for checkauthorized.js-->
+        <script type="text/javascript">
+            var cachebuster = Math.round(new Date().getTime() / 1000);
+            document.write('<scr' + 'ipt type="text/javascript" src="./javascripts/checkauthorized.js?cb=' + cachebuster + '"></scr' + 'ipt>');
+        </script>
+        <script src="./javascripts/getstats.js"></script>
+
+</body>
+
+</html>

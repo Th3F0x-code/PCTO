@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KM - Stats</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/newlogo.svg" />
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+
+    <!-- Animation CSS-->
+    <link rel="stylesheet" href="stylesheets/animation.css">
+
+</head>
+
+<body class="leading-normal tracking-normal text-gray-900" style="font-family: 'Source Sans Pro', sans-serif;">
+    <!-- Donation History-->
+    <div class="flex flex-col">
+        <div class="overflow-x-auto shadow-md sm:rounded-lg">
+            <div class="inline-block min-w-full align-middle">
+                <div class="overflow-hidden ">
+                    <table id="table" class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-700">
+                        <thead class="bg-gray-100 dark:bg-gray-700">
+                            <tr>
+                                <th scope="col"
+                                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Address Wallet
+                                </th>
+                                <th scope="col"
+                                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Reason
+                                </th>
+                                <th scope="col"
+                                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Amount Donated
+                                </th>
+                                <th scope="col"
+                                    class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400">
+                                    Time (UCT)
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="table-data"
+                            class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+                            <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <td
+                                    class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                </td>
+                                <td
+                                    class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                </td>
+                                <td
+                                    class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                </td>
+                                <td
+                                    class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- cache buster for checklogged.js-->
+    <script type="text/javascript">
+        var cachebuster = Math.round(new Date().getTime() / 1000);
+        document.write('<scr' + 'ipt type="text/javascript" src="./javascripts/checklogged.js?cb=' + cachebuster + '"></scr' + 'ipt>');
+    </script>
+
+    <!-- cache buster for checkauthorized.js-->
+    <script type="text/javascript">
+        var cachebuster = Math.round(new Date().getTime() / 1000);
+        document.write('<scr' + 'ipt type="text/javascript" src="./javascripts/checkauthorized.js?cb=' + cachebuster + '"></scr' + 'ipt>');
+    </script>
+
+    <script src="./javascripts/dynamictable.js"></script>
+
+</body>
+
+</html>
